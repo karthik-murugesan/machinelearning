@@ -2,8 +2,8 @@
 Machine learning related interesting materials
 
 #Popular Conferences for Machine Learning
-http://scaledml.org/
-https://recsys.acm.org
+http://scaledml.org/\n
+https://recsys.acm.org\n
 
 
 # Spark Algorithms:
