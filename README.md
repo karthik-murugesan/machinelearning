@@ -18,5 +18,9 @@
 CRF/FFM/FM   https://github.com/Intel-bigdata/imllib-spark
 
 
+# Music Recommendation Useful Links
 
+Review Based Content Similarity : https://sites.northwestern.edu/msia/2018/03/16/movie-recommender-system-based-on-natural-language-processing/
+
+Playlist based W2V Similarity : https://towardsdatascience.com/using-word2vec-for-music-recommendations-bb9649ac2484
    
