@@ -1,0 +1,34 @@
+TF Serving Installation Guide without Docker on CentOS:
+
+yum install gcc patch automake
+yum install gcc-c++
+yum install libtool
+
+export BAZEL_VERSION=0.15.0
+
+export TF_SERVING_BUILD_OPTIONS="--config=nativeopt"
+export  TF_SERVING_BAZEL_OPTIONS=""
+
+1. git clone -b r1.12 https://github.com/tensorflow/serving.git
+mkdir bazel
+cd bazel
+curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36" -fSsL -O https://github.com/bazelbuild/bazel/releases/download/0.15.0/bazel-0.15.0-installer-linux-x86_64.sh 
+
+curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36" -fSsL -o ./LICENSE.txt https://raw.githubusercontent.com/bazelbuild/bazel/master/LICENSE && \
+
+chmod +x bazel-*.sh
+
+ ./bazel-$BAZEL_VERSION-installer-linux-x86_64.sh 
+
+bazel build --color=yes --curses=yes ${TF_SERVING_BAZEL_OPTIONS}    --verbose_failures --output_filter=DONT_MATCH_ANYTHING    ${TF_SERVING_BUILD_OPTIONS} tensorflow_serving/model_servers:tensorflow_model_server 
+
+
+&& \
+    cp bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server \
+    /usr/local/bin/ 
+
+
+
+&& \
+    cp bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server \
+    /usr/local/bin/
