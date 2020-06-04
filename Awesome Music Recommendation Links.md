@@ -1,8 +1,8 @@
-== Solution/Architecture==
-===Spotify===
+##Solution/Architecture
+###Spotify
 [Music Recommendation at Spotify - Ben Carterette](https://issuu.com/gabrielaarangocadavid/docs/16._friday_-_music_recommendation_at_spotify_-_ben)
-== Alogithms ==
+## Alogithms
 
-== Content MetaData==
+## Content MetaData
 
-== Research Papers ==
+## Research Papers
