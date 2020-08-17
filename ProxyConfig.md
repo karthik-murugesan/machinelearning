@@ -147,4 +147,6 @@ curl -kFlo <url>
 export PYTHONHTTPSVERIFY=0
 ```
 ### NPM
+```bash
 npm set strict-ssl false
+```
