@@ -1,4 +1,19 @@
-##Proxy Configuration
+#Using various framework/tools over corporate proxy
+If you are behind a corporate proxy,  use the following configuration to access different tools/frameworks over Corporate Proxy.
+
+If you are behind the windows proxy, you can run cntlm to change the  NTLM authentication to normal HTTP Proxy. 
+
+Supposing your proxy is defined with:
+
+* username
+* password
+* host
+* port
+The resulting configuration is: http://username:password@host:port
+
+If you use Cntlm, then your configuration would be: 127.0.0.1:3128. Otherwise, follow the next steps to configure each tool individually.
+
+## Proxy Configuration
 
 ### Wget/Curl/pip
 Use the below commands
@@ -118,3 +133,18 @@ docker-machine create -d virtualbox \
     default
  ```
 Or you can edit the file ~/.docker/machine/machines/default/config.json.
+## Disable SSL Check for different tools
+### wget
+```bash
+wget --no-check-certificate <url>
+```
+### Curl
+```bash
+curl -kFlo <url>
+```
+### Python
+```bash
+export PYTHONHTTPSVERIFY=0
+```
+### NPM
+npm set strict-ssl false
